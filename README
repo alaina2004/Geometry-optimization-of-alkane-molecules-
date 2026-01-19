@@ -1,43 +1,51 @@
-# Alkane BFGS Optimizer in Cartesian Coordinates
+# Alkane BFGS Optimizer
 
-## Overview
-This program performs geometry optimization of alkane molecules using the BFGS optimization algorithm in Cartesian coordinates. The input structure should be provided in MOL2 format, and the optimized output will be written to a specified output file.
+A molecular geometry optimization tool for alkane molecules implementing the BFGS algorithm in Cartesian coordinates.
 
-## Usage
-To run the optimizer, use the following command:
+## Description
+This optimizer refines alkane molecular structures by minimizing their potential energy. It reads molecular geometries from MOL2 format files and iteratively adjusts atomic positions until an optimal configuration is achieved.
 
-```bash
-python main.py input.mol2 > output.out
-```
+## Installation
 
-- `input.mol2`: The input file containing the molecular structure in MOL2 format.
-- `output.out`: The output file that will contain optimization results.
+### Prerequisites
+- Python 3.12 or higher
+- NumPy library
 
-## Requirements
-Ensure that you have the following dependencies installed:
-
-- Python 3.12
-- NumPy
-
-Install dependencies using:
-
+### Setup
+Install required dependencies:
 ```bash
 pip install numpy
 ```
 
-## Input File Format
-The input file should be in the custom MOL2 format, containing atomic coordinates and connectivity information for the alkane molecule.
+## How to Use
 
-## Output
-The output file (`output.out`) contains:
+Run the optimizer with:
+```bash
+python main.py input.mol2 > output.out
+```
 
-- Initial structure and energies
-- Structure and energy at each optimization cycle
-- Optimized Cartesian coordinates
+**Parameters:**
+- `input.mol2` - MOL2 format file containing the initial molecular structure
+- `output.out` - Destination file for optimization results
 
-## Example
-Sample run:
+## Input Specification
+Provide molecular structures in MOL2 format, which should include:
+- Atomic coordinates
+- Connectivity information
+- Appropriate molecular topology for alkanes
 
+## Output Details
+The generated output file includes:
+- Starting geometry and energy values
+- Progressive updates at each optimization iteration
+- Final optimized Cartesian coordinates
+- Convergence information
+
+## Example Usage
+
+Optimize an ethane molecule:
 ```bash
 python main.py ethane.mol2 > ethane_optimized.out
 ```
+
+This will process the ethane structure and save the optimization trajectory and final geometry to `ethane_optimized.out`.

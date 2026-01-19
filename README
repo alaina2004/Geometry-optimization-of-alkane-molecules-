@@ -1,0 +1,43 @@
+# Alkane BFGS Optimizer in Cartesian Coordinates
+
+## Overview
+This program performs geometry optimization of alkane molecules using the BFGS optimization algorithm in Cartesian coordinates. The input structure should be provided in MOL2 format, and the optimized output will be written to a specified output file.
+
+## Usage
+To run the optimizer, use the following command:
+
+```bash
+python main.py input.mol2 > output.out
+```
+
+- `input.mol2`: The input file containing the molecular structure in MOL2 format.
+- `output.out`: The output file that will contain optimization results.
+
+## Requirements
+Ensure that you have the following dependencies installed:
+
+- Python 3.12
+- NumPy
+
+Install dependencies using:
+
+```bash
+pip install numpy
+```
+
+## Input File Format
+The input file should be in the custom MOL2 format, containing atomic coordinates and connectivity information for the alkane molecule.
+
+## Output
+The output file (`output.out`) contains:
+
+- Initial structure and energies
+- Structure and energy at each optimization cycle
+- Optimized Cartesian coordinates
+
+## Example
+Sample run:
+
+```bash
+python main.py ethane.mol2 > ethane_optimized.out
+```
